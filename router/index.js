@@ -2,8 +2,9 @@ const config = require('../config/config')
 const SmartApp = require('@smartthings/smartapp');
 const express = require('express')
 const router = express.Router()
-const axios = require('axios')
 const baseUrl = 'https://api.smartthing.com';
+const mqttClient = require('../service/mqtt')
+
 
 const smartapp = new SmartApp()
     .configureI18n({updateFiles: true})
@@ -58,9 +59,7 @@ const smartapp = new SmartApp()
         page.complete(true)
     })
     .updated(async(context, updateData)=>{
-        // console.log(context.api.subscriptions)
         console.log(updateData)
-        // await context.api.subscriptions.delete() // clear any existing configuration
         await context.api.subscriptions.subscribeToDevices(context.config.Door, '*', '*', 'DoorMonitorHandler')
         await context.api.subscriptions.subscribeToDevices(context.config.Hue, '*', '*', 'HueHandler');
         await context.api.subscriptions.subscribeToDevices(context.config.AirMonitor, '*', '*', 'AirMonitorHandler');
@@ -68,26 +67,21 @@ const smartapp = new SmartApp()
         await context.api.subscriptions.subscribeToDevices(context.config.Motion, '*', '*', 'MotionHandler');
     })
     .subscribedEventHandler('DoorMonitorHandler', async (context, event) => {
-      // console.log(context, event)
-      console.log(event.value)
+      mqttClient.publish('door/sensor_status', JSON.stringify(event))
     })
     .subscribedEventHandler('HueHandler', async (context, event) => {
-      // console.log(context, event)
-      // console.log(event.value)
+      mqttClient.publish('bulb/sensor_status', JSON.stringify(event))
     })
     .subscribedEventHandler('AirMonitorHandler', async (context, event) => {
-      // console.log(context, event)
-      // console.log(event.value)
+      mqttClient.publish('airmonitor/sensor_status', JSON.stringify(event))
     })
     .subscribedEventHandler('SmartPlugHandler', async (context, event) => {
-      // console.log(context, event)
-      // console.log(event.value)
+      mqttClient.publish('plug/sensor_status', JSON.stringify(event))
+      console.log(event)
     })
     .subscribedEventHandler('MotionHandler', async (context, event) => {
-      // console.log(context, event)
-      // console.log(event.value)
+      mqttClient.publish('motion/sensor_status', JSON.stringify(event))
     })
-    
     .appId(config.APP_ID)
     .clientId(config.ClientID)
     .clientSecret(config.ClientSecret)
@@ -96,11 +90,9 @@ const smartapp = new SmartApp()
 
 router.post('/', (req,res)=>{ 
   smartapp.handleHttpCallback(req,res)
-//   axios.get(req.body.confirmationData.confirmationUrl)
 })
 
 router.get('/', (req,res)=>{
-    // res.send('가을')
     res.sendStatus(200)
 })
 
