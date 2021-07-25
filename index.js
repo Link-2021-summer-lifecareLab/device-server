@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const config = require('./config/config')
 const router = require('./router/index')
+const mqttCLient = require('./service/mqtt')
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
