@@ -1,0 +1,364 @@
+[{
+    "deviceId": "e4d41df7-e244-4890-b6c1-767c52d83119",
+    "name": "IKEA Motion Sensor",
+    "label": "IKEA Motion Sensor",
+    "componentId": "main",
+    "state": {
+        "configuration": {},
+        "healthCheck": {
+            "checkInterval": {
+                "value": 43920,
+                "unit": "s",
+                "data": {
+                    "protocol": "zigbee",
+                    "hubHardwareId": "0020",
+                    "deviceScheme": "TRACKED"
+                },
+                "timestamp": "2021-07-13T12:47:38.786Z"
+            },
+            "healthStatus": {
+                "value": null
+            },
+            "DeviceWatch-Enroll": {
+                "value": null
+            },
+            "DeviceWatch-DeviceStatus": {
+                "value": null
+            }
+        },
+        "refresh": {},
+        "motionSensor": {
+            "motion": {
+                "value": "active",
+                "timestamp": "2021-07-27T04:53:39.038Z"
+            }
+        },
+        "sensor": {},
+        "battery": {
+            "battery": {
+                "value": 88,
+                "unit": "%",
+                "timestamp": "2021-07-18T01:38:13.456Z"
+            }
+        }
+    }
+}, {
+    "deviceId": "fd0d58e1-f606-4b33-9c56-af51aa29109d",
+    "name": "air-monitor-v1-20201123-2-nr",
+    "label": "에어모니터",
+    "componentId": "main",
+    "state": {
+        "relativeHumidityMeasurement": {
+            "humidity": {
+                "value": 52.07,
+                "unit": "%",
+                "timestamp": "2021-07-26T20:54:24.704Z"
+            }
+        },
+        "refresh": {},
+        "carbonDioxideHealthConcern": {
+            "carbonDioxideHealthConcern": {
+                "value": "good",
+                "timestamp": "2021-07-23T13:56:38.658Z"
+            }
+        },
+        "illuminanceMeasurement": {
+            "illuminance": {
+                "value": 0,
+                "unit": "lux",
+                "timestamp": "2021-07-26T20:40:48.162Z"
+            }
+        },
+        "battery": {
+            "battery": {
+                "value": 9,
+                "unit": "%",
+                "timestamp": "2021-07-26T20:53:24.795Z"
+            }
+        },
+        "carbonDioxideMeasurement": {
+            "carbonDioxide": {
+                "value": 467,
+                "unit": "ppm",
+                "timestamp": "2021-07-26T20:54:34.254Z"
+            }
+        },
+        "airQualitySensor": {
+            "airQuality": {
+                "value": 2,
+                "unit": "CAQI",
+                "timestamp": "2021-07-26T20:55:24.917Z"
+            }
+        },
+        "fineDustHealthConcern": {
+            "fineDustHealthConcern": {
+                "value": "moderate",
+                "timestamp": "2021-07-26T09:21:36.444Z"
+            }
+        },
+        "odorSensor": {
+            "odorLevel": {
+                "value": 1,
+                "timestamp": "2021-07-26T00:41:08.040Z"
+            }
+        },
+        "veryFineDustHealthConcern": {
+            "veryFineDustHealthConcern": {
+                "value": "good",
+                "timestamp": "2021-07-25T11:57:08.574Z"
+            }
+        },
+        "healthCheck": {
+            "checkInterval": {
+                "value": 60,
+                "unit": "s",
+                "data": {
+                    "deviceScheme": "UNTRACKED",
+                    "protocol": "cloud"
+                },
+                "timestamp": "2021-06-21T01:20:51.586Z"
+            },
+            "healthStatus": {
+                "value": "offline",
+                "data": {},
+                "timestamp": "2021-07-26T21:40:02.883Z"
+            },
+            "DeviceWatch-Enroll": {
+                "value": null
+            },
+            "DeviceWatch-DeviceStatus": {
+                "value": "online",
+                "data": {},
+                "timestamp": "2021-06-21T01:20:51.718Z"
+            }
+        },
+        "temperatureMeasurement": {
+            "temperature": {
+                "value": 30.53,
+                "unit": "C",
+                "timestamp": "2021-07-26T20:54:24.704Z"
+            }
+        },
+        "dustSensor": {
+            "dustLevel": {
+                "value": 32,
+                "unit": "μg/m^3",
+                "timestamp": "2021-07-26T20:55:24.917Z"
+            },
+            "fineDustLevel": {
+                "value": 22,
+                "unit": "μg/m^3",
+                "timestamp": "2021-07-26T20:54:24.704Z"
+            }
+        },
+        "veryFineDustSensor": {
+            "veryFineDustLevel": {
+                "value": 10,
+                "unit": "μg/m^3",
+                "timestamp": "2021-07-26T20:54:24.704Z"
+            }
+        },
+        "dustHealthConcern": {
+            "dustHealthConcern": {
+                "value": "moderate",
+                "timestamp": "2021-07-26T20:55:24.917Z"
+            }
+        }
+    }
+}, {
+    "deviceId": "15095a4e-2286-4fd0-a6ea-efa2c480d056",
+    "name": "Hue color light 5",
+    "label": "Hue color light 11",
+    "componentId": "main",
+    "state": {
+        "colorControl": {
+            "saturation": {
+                "value": 55,
+                "timestamp": "2021-07-25T08:58:03.429Z"
+            },
+            "color": {
+                "value": null
+            },
+            "hue": {
+                "value": 13,
+                "timestamp": "2021-07-25T08:58:03.409Z"
+            }
+        },
+        "actuator": {},
+        "light": {
+            "switch": {
+                "value": "off",
+                "timestamp": "2021-07-26T09:00:36.807Z"
+            }
+        },
+        "healthCheck": {
+            "checkInterval": {
+                "value": 16270,
+                "unit": "s",
+                "data": {
+                    "deviceScheme": "untracked",
+                    "protocol": "LAN",
+                    "hubHardwareId": "0020"
+                },
+                "timestamp": "2021-07-14T02:06:17.316Z"
+            },
+            "healthStatus": {
+                "value": null
+            },
+            "DeviceWatch-Enroll": {
+                "value": null
+            },
+            "DeviceWatch-DeviceStatus": {
+                "value": null
+            }
+        },
+        "switchLevel": {
+            "level": {
+                "value": 100,
+                "unit": "%",
+                "timestamp": "2021-07-26T06:22:49.377Z"
+            }
+        },
+        "refresh": {},
+        "sensor": {},
+        "switch": {
+            "switch": {
+                "value": "off",
+                "timestamp": "2021-07-26T09:00:36.807Z"
+            }
+        },
+        "colorTemperature": {
+            "colorTemperature": {
+                "value": 2732,
+                "unit": "K",
+                "timestamp": "2021-07-25T08:58:03.421Z"
+            }
+        }
+    }
+}, {
+    "deviceId": "8df36af4-7f2a-43ae-994f-1a0bbe3a1393",
+    "name": "dawon-switch-power-energy-prod-0908",
+    "label": "스마트플러그1",
+    "componentId": "main",
+    "state": {
+        "powerMeter": {
+            "power": {
+                "value": 0,
+                "unit": "W",
+                "timestamp": "2021-07-26T08:29:09.257Z"
+            }
+        },
+        "powerConsumptionReport": {
+            "powerConsumption": {
+                "value": {
+                    "start": "2021-07-26T08:29:09Z",
+                    "end": "2021-07-26T08:33:23Z",
+                    "energy": 30,
+                    "deltaEnergy": 0
+                },
+                "timestamp": "2021-07-26T08:33:23.473Z"
+            }
+        },
+        "energyMeter": {
+            "energy": {
+                "value": 0.03,
+                "unit": "kWh",
+                "timestamp": "2021-07-25T03:49:00.915Z"
+            }
+        },
+        "healthCheck": {
+            "checkInterval": {
+                "value": 60,
+                "unit": "s",
+                "data": {
+                    "deviceScheme": "UNTRACKED",
+                    "protocol": "cloud"
+                },
+                "timestamp": "2021-07-16T05:14:30.453Z"
+            },
+            "healthStatus": {
+                "value": null
+            },
+            "DeviceWatch-Enroll": {
+                "value": null
+            },
+            "DeviceWatch-DeviceStatus": {
+                "value": "offline",
+                "data": {},
+                "timestamp": "2021-07-26T11:16:47.997Z"
+            }
+        },
+        "refresh": {},
+        "switch": {
+            "switch": {
+                "value": "off",
+                "timestamp": "2021-07-26T11:16:47.997Z"
+            }
+        }
+    }
+}, {
+    "deviceId": "050769b2-4514-4b19-802d-fea9023ad406",
+    "name": "문열림 센서",
+    "label": "문열림 센서",
+    "componentId": "main",
+    "state": {
+        "contactSensor": {
+            "contact": {
+                "value": "closed",
+                "timestamp": "2021-07-26T08:50:16.422Z"
+            }
+        },
+        "threeAxis": {
+            "threeAxis": {
+                "value": [-1006, -53, -34],
+                "unit": "mG",
+                "timestamp": "2021-07-27T04:49:14.472Z"
+            }
+        },
+        "configuration": {},
+        "healthCheck": {
+            "checkInterval": {
+                "value": 720,
+                "unit": "s",
+                "data": {
+                    "protocol": "zigbee",
+                    "hubHardwareId": "0020",
+                    "offlinePingable": "1",
+                    "deviceScheme": "TRACKED"
+                },
+                "timestamp": "2021-07-13T12:45:30.171Z"
+            },
+            "healthStatus": {
+                "value": null
+            },
+            "DeviceWatch-Enroll": {
+                "value": null
+            },
+            "DeviceWatch-DeviceStatus": {
+                "value": null
+            }
+        },
+        "temperatureMeasurement": {
+            "temperature": {
+                "value": 30.2,
+                "unit": "C",
+                "timestamp": "2021-07-27T04:53:29.307Z"
+            }
+        },
+        "refresh": {},
+        "sensor": {},
+        "battery": {
+            "battery": {
+                "value": 85,
+                "unit": "%",
+                "timestamp": "2021-07-13T12:45:13.508Z"
+            }
+        },
+        "accelerationSensor": {
+            "acceleration": {
+                "value": "inactive",
+                "timestamp": "2021-07-27T04:49:24.556Z"
+            }
+        }
+    }
+}]

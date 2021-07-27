@@ -1,8 +1,8 @@
 {
-  "installedAppId": "14cd9c08-c808-442f-b4d0-df41723e02b9",
+  "installedAppId": "5493f3f9-4dfe-4945-9850-fc1c6b1a718c",
   "locationId": "676ef55a-f6e2-44e1-ada2-bd3ad4d5fe9e",
-  "authToken": "a3bd2874-746e-4ed4-93fd-0572016dfebf",
-  "refreshToken": "d646fcb5-83a3-4287-a734-6361b17dc220",
+  "authToken": "cd306f5a-eb87-4983-a837-f0126cc5c971",
+  "refreshToken": "dca3e7b9-2ec9-40fd-99fc-8f9ec51c6d2c",
   "config": {
     "Motion": [
       {
@@ -42,14 +42,14 @@
       {
         "valueType": "DEVICE",
         "deviceConfig": {
-          "deviceId": "62eb4cad-0267-48de-9cb5-968bad528463",
+          "deviceId": "8df36af4-7f2a-43ae-994f-1a0bbe3a1393",
           "componentId": "main"
         }
       },
       {
         "valueType": "DEVICE",
         "deviceConfig": {
-          "deviceId": "8df36af4-7f2a-43ae-994f-1a0bbe3a1393",
+          "deviceId": "62eb4cad-0267-48de-9cb5-968bad528463",
           "componentId": "main"
         }
       }

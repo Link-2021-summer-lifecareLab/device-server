@@ -4,7 +4,7 @@ const fs= require('fs')
 
 const config = require('./config/config')
 const mqttClient = require('./service/mqtt')
-const contextStore = new FileContextStore('./data')
+const contextStore = new FileContextStore('./data/contextStore')
 
 const smartapp = new SmartApp()
     .configureI18n({updateFiles: true})
@@ -64,19 +64,12 @@ const smartapp = new SmartApp()
         page.complete(true)
     })
     .installed(async(context, installData)=>{
-        let ids = []
-        const config = installData.installedApp.config
-        
-        Object.keys(config).forEach(sensors=>{
-            ids = [...ids, ...config[sensors].map(sensor=>sensor.deviceConfig.deviceId)]
-        })
-        fs.writeFile('./data/schema.json', JSON.stringify(ids),(err)=>{})
-
         await context.api.subscriptions.subscribeToDevices(context.config.Door, '*', '*', 'DoorMonitorHandler')
         await context.api.subscriptions.subscribeToDevices(context.config.Hue, '*', '*', 'HueHandler');
         await context.api.subscriptions.subscribeToDevices(context.config.AirMonitor, '*', '*', 'AirMonitorHandler');
         await context.api.subscriptions.subscribeToDevices(context.config.SmartPlug, '*', '*', 'SmartPlugHandler');
         await context.api.subscriptions.subscribeToDevices(context.config.Motion, '*', '*', 'MotionHandler');
+        
     })
     // .updated(async(context, updateData)=>{
         
@@ -86,16 +79,20 @@ const smartapp = new SmartApp()
     })
     .subscribedEventHandler('HueHandler', async (context, event) => {
       mqttClient.publish('bulb/sensor_status', JSON.stringify(event))
+      console.log(event)
     })
     .subscribedEventHandler('AirMonitorHandler', async (context, event) => {
       mqttClient.publish('airmonitor/sensor_status', JSON.stringify(event))
     })
     .subscribedEventHandler('SmartPlugHandler', async (context, event) => {
       mqttClient.publish('plug/sensor_status', JSON.stringify(event))
-      console.log(event)
     })
     .subscribedEventHandler('MotionHandler', async (context, event) => {
       mqttClient.publish('motion/sensor_status', JSON.stringify(event))
+    })
+    .uninstalled((context, uninstallData)=>{
+      const files = fs.readdirSync('./data/contextStore')
+      fs.rmSync(`./data/contextStore/${files[0]}`)
     })
 
 module.exports = smartapp
