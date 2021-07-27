@@ -10,6 +10,32 @@ const authedAxios = axios.create({
     }
 })
 
+async function getDeviceInitialStatus(){
+  return new Promise(async (resolve, reject)=>{
+    const files = fs.readdirSync('./data/contextStore')
+    const installedAppConfig = require(`../data/contextStore/${files[0]}`)
+    
+    const config = installedAppConfig.config
+    const modules = Object.keys(config)
+    let ids = []
+    modules.forEach(module=>{
+      ids = [...ids, ...config[module].map(device=>device.deviceConfig.deviceId)]
+    })
+    
+    const descriptions = await Promise.all(ids.map(id=>getSensorDescription(id)))  
+    const sensorData = await Promise.all(ids.map(id=>getSensorStatus(id)))
+    let result = []
+    for(let i=0; i<descriptions.length; i++){
+      const data = {...descriptions[i], ...sensorData[i]}
+      result.push(data)
+    }
+    resolve(result)
+  }).catch(err=>{
+      reject(err)
+  })
+  
+}
+
 function getSensorStatus(DEVICE_ID){
     return new Promise((resolve, reject)=>{        
             const url = `${config.URL}/${DEVICE_ID}/status`
@@ -57,4 +83,4 @@ function changeStatus(DEVICE_ID, data){
     })
 }
 
-module.exports = {getSensorStatus, getSensorDescription, changeStatus}
+module.exports = {getSensorStatus, getSensorDescription, changeStatus, getDeviceInitialStatus}
